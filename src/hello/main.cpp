@@ -1,11 +1,11 @@
+#include <include/hellowidget.h>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
+int main(int argc, char *argv[]) {
+  QApplication a(argc, argv);
 
-int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
-    QLabel label( QLabel::tr("Hello Qt!") );
-    label.show();
+  HelloWidget hw;
+  hw.show();
 
-    return a.exec();
+  return a.exec();
 }

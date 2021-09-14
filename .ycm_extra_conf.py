@@ -90,6 +90,8 @@ get_python_inc(),
 "/usr/include/c++/8",
 '-isystem',
 "/usr/local/Qt-5.12.11/include/",
+'-isystem',
+"/home/zhuorui/code/learnqt",
 '-std=c++17',
 ]
 
