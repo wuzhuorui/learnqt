@@ -1,10 +1,12 @@
-#include <include/hellowidget.h>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
+#include "ui/hellotext.h"
 int main(int argc, char *argv[]) {
   QApplication a(argc, argv);
+  QWidget hw;
+  Ui::Hello helloUi;
 
-  HelloWidget hw;
+  helloUi.setupUi(&hw);
   hw.show();
 
   return a.exec();
