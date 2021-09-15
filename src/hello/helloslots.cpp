@@ -6,10 +6,19 @@ SlotTestWidget::SlotTestWidget(std::shared_ptr<QWidget> parent)
   ui->setupUi(this);
   connect(ui->b1, &QPushButton::clicked, this, &SlotTestWidget::FoodIsComing);
   connect(ui->lineEdit, &QLineEdit::textEdited, ui->label, &QLabel::setText);
+
+  connect(ui->pushButtonA, &QPushButton::clicked, this,
+          &SlotTestWidget::FoodIsComing);
+  connect(ui->pushButtonB, &QPushButton::clicked, this,
+          &SlotTestWidget::FoodIsComing);
+  connect(ui->pushButtonC, &QPushButton::clicked, this,
+          &SlotTestWidget::FoodIsComing);
 }
 
 SlotTestWidget::~SlotTestWidget() {}
 
 void SlotTestWidget::FoodIsComing() {
-  QMessageBox::information(this, tr("送餐"), tr("送餐"));
+  QString strObjectSrc = this->sender()->objectName();
+
+  QMessageBox::information(this, tr("送餐"), strObjectSrc);
 }
