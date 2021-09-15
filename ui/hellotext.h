@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
@@ -22,6 +23,8 @@ class Ui_Hello
 public:
     QLabel *hello;
     QPushButton *b1;
+    QLineEdit *lineEdit;
+    QLabel *label;
 
     void setupUi(QWidget *Hello)
     {
@@ -34,6 +37,12 @@ public:
         b1 = new QPushButton(Hello);
         b1->setObjectName(QString::fromUtf8("b1"));
         b1->setGeometry(QRect(120, 180, 80, 23));
+        lineEdit = new QLineEdit(Hello);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setGeometry(QRect(10, 60, 271, 21));
+        label = new QLabel(Hello);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(10, 90, 271, 16));
 
         retranslateUi(Hello);
 
@@ -45,6 +54,7 @@ public:
         Hello->setWindowTitle(QApplication::translate("Hello", "Form", nullptr));
         hello->setText(QApplication::translate("Hello", "<html><head/><body><p><span style=\" font-size:24pt;\">Hello Text!!</span></p></body></html>", nullptr));
         b1->setText(QApplication::translate("Hello", "\346\210\221\351\245\277\344\272\206", nullptr));
+        label->setText(QApplication::translate("Hello", "TextLabel", nullptr));
     } // retranslateUi
 
 };
